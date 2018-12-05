@@ -60,6 +60,14 @@ $(function test() {
     // visibility when the menu icon is clicked. This test
     // should have two expectations: does the menu display when
     // clicked and does it hide when clicked again.
+    it("displays when icon is clicked and hides when it's clicked again", function toggle() {
+      menuIcon = $('.menu-icon-link');
+      menuIcon.click();
+      expect($('body')[0]).not.toHaveClass('menu-hidden');
+
+      menuIcon.click();
+      expect($('body')[0]).toHaveClass('menu-hidden');
+    });
   });
 
   // TODO: Write a new test suite named "Initial Entries"
