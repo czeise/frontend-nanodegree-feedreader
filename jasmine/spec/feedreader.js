@@ -101,7 +101,7 @@ $(function test() {
     // by the loadFeed function that the content actually changes.
     // Remember, loadFeed() is asynchronous.
     it('content changes when new feed is loaded', function contentChanges(done) {
-      var initialEntry = $('.feed .entry')[0].innerText;
+      const initialEntry = $('.feed .entry')[0].innerText;
       loadFeed(1, function cb() {
         expect(initialEntry).not.toEqual($('.feed .entry')[0].innerText);
         done();
